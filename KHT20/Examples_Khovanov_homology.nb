@@ -1,0 +1,429 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     16398,        421]
+NotebookOptionsPosition[     13834,        380]
+NotebookOutlinePosition[     14316,        398]
+CellTagsIndexPosition[     14273,        395]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.8120036319909163`*^9, 3.8120036329332037`*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"98ce0fc0-b340-40fe-8eb1-77833cfd4a8e"],
+
+Cell["\<\
+First load the KnotTheory package. This is available on katlas.org.
+Advice: specifying the path of the folder \[OpenCurlyDoubleQuote]KnotTheory\
+\[CloseCurlyDoubleQuote] might save you headache.\
+\>", "Text",
+ CellChangeTimes->{{3.812003788789568*^9, 3.812003798316479*^9}, {
+  3.8120956969001565`*^9, 3.81209575952363*^9}, {3.8120962042289457`*^9, 
+  3.812096226836857*^9}},ExpressionUUID->"6ce7e67c-b895-4dde-a4bf-\
+f8a36fe8b299"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"$Path", "=", 
+   RowBox[{"Join", "[", 
+    RowBox[{"$Path", ",", 
+     RowBox[{
+     "{", "\"\<C:\\\\Users\\\\jbece\\\\Documents\\\\MEGA\\\\PhD\\\\\
+Mathematica notebooks\\\\KnotTheory\>\"", "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Once", "[", 
+   RowBox[{"<<", "KnotTheory`"}], "]"}], ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.812003781898817*^9, 3.8120038030530057`*^9}, 
+   3.8120042292210207`*^9, {3.8120061803635025`*^9, 3.812006181430653*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"a0a62d4d-9f54-41bc-add9-6f0a831e4452"],
+
+Cell["Select your favourite knot", "Text",
+ CellChangeTimes->{{3.8120930559612126`*^9, 
+  3.8120930631856613`*^9}},ExpressionUUID->"e5af2d78-9231-4d06-b284-\
+cf72f296e3ba"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"K", " ", "=", " ", 
+   RowBox[{"Knot", "[", 
+    RowBox[{"5", ",", "1"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8120039766815844`*^9, 3.8120039889523354`*^9}, {
+   3.812093042065323*^9, 3.8120930776732826`*^9}, {3.812093136796904*^9, 
+   3.8120932076300607`*^9}, {3.812093729389985*^9, 3.8120937434243317`*^9}, {
+   3.8120955745378923`*^9, 3.812095576154062*^9}, {3.812095825930146*^9, 
+   3.812095827739127*^9}, {3.812096245915964*^9, 3.8120962902785306`*^9}, 
+   3.812119973020539*^9, 3.8121203210997443`*^9, 3.8121204372453437`*^9},
+ CellLabel->"In[7]:=",ExpressionUUID->"62213dab-899b-44ec-b41e-1df0e412039d"],
+
+Cell["\<\
+The internal function Kh[K][q,t] returns a polynomial in two variables \
+encoding the Khovanov homology of K:\
+\>", "Text",
+ CellChangeTimes->{{3.8120962953747125`*^9, 
+  3.812096430638917*^9}},ExpressionUUID->"53b8d090-e268-4879-94d0-\
+1e90d375cb9f"],
+
+Cell[BoxData[
+ RowBox[{"PK", "=", 
+  RowBox[{
+   RowBox[{"Kh", "[", "K", "]"}], "[", 
+   RowBox[{"q", ",", "t"}], "]"}]}]], "Input",
+ CellLabel->"In[12]:=",ExpressionUUID->"03757969-f7fb-48a9-8e45-b555c29406f5"],
+
+Cell[TextData[{
+ "The coefficient in ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["q", "i"], 
+    SuperscriptBox["t", "j"]}], TraditionalForm]],ExpressionUUID->
+  "d011a12f-c871-4df2-ad98-6e3128fb6e8a"],
+ "is the dimension (over ",
+ Cell[BoxData[
+  FormBox["Q", TraditionalForm]],ExpressionUUID->
+  "58c30570-85f4-4f81-9e46-58cd0ac9546f"],
+ " ) of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["Kh", 
+     RowBox[{"i", ",", "j"}]], "(", "K", ")"}], TraditionalForm]],
+  ExpressionUUID->"73f461c2-3eb9-448a-b2da-4e5e9f22fe7e"],
+ "\n\nLet us create a table as in Turner\[CloseCurlyQuote]s book. The \
+following defines a function that prints the table of Khovanov homology of a \
+knot K."
+}], "Text",
+ CellChangeTimes->{{3.812093230240145*^9, 3.8120932355762625`*^9}, {
+   3.812093415595173*^9, 3.812093451938904*^9}, 3.812093523444883*^9, {
+   3.81209355701251*^9, 3.812093622010165*^9}, {3.8121200203017015`*^9, 
+   3.812120063644005*^9}},ExpressionUUID->"a61edf9c-a49b-464e-b31d-\
+e53ed5397220"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"TableKhovanov", "[", "K_", "]"}], ":=", " ", 
+   RowBox[{"(", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"PK", "=", 
+      RowBox[{
+       RowBox[{"Kh", "[", "K", "]"}], "[", 
+       RowBox[{"q", ",", "t"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"qdeg", " ", "=", " ", 
+      RowBox[{"Reverse", "@", 
+       RowBox[{"Exponent", "[", 
+        RowBox[{"PK", ",", "q", ",", "List"}], "]"}]}]}], ";", "\n", 
+     RowBox[{"homdeg", " ", "=", " ", 
+      RowBox[{"Exponent", "[", 
+       RowBox[{"PK", ",", "t", ",", "List"}], "]"}]}], ";", "\n", 
+     RowBox[{"thearray", "=", 
+      RowBox[{"ConstantArray", "[", 
+       RowBox[{"0", ",", 
+        RowBox[{"{", " ", 
+         RowBox[{
+          RowBox[{"Length", "@", "qdeg"}], ",", 
+          RowBox[{"Length", "@", "homdeg"}]}], "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", " ", 
+     RowBox[{"TableForm", "[", 
+      RowBox[{"thearray", ",", 
+       RowBox[{"TableHeadings", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"qdeg", ",", "homdeg"}], "}"}]}]}], "]"}], "  ", ";", "\n", 
+     RowBox[{"mylist", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Coefficient", "[", 
+         RowBox[{"PK", ",", "q", ",", "#"}], "]"}], "&"}], "/@", 
+       RowBox[{"Range", "[", 
+        RowBox[{
+         RowBox[{"Exponent", "[", 
+          RowBox[{"PK", ",", "q", ",", "Max"}], "]"}], ",", 
+         RowBox[{"Exponent", "[", 
+          RowBox[{"PK", ",", "q", ",", "Min"}], "]"}], ",", 
+         RowBox[{"-", "1"}]}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Do", "[", "   ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"listexp", "=", "  ", 
+         RowBox[{"Exponent", "[", "     ", 
+          RowBox[{
+           RowBox[{"mylist", "[", 
+            RowBox[{"[", 
+             RowBox[{
+              RowBox[{"-", "i"}], "+", "1", "+", 
+              RowBox[{"Exponent", "[", 
+               RowBox[{"PK", ",", "q", ",", "Max"}], "]"}]}], "]"}], "]"}], 
+           ",", "t", ",", "List"}], "]"}]}], "      ", ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"Do", "[", "     ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"coeff", "=", " ", 
+            RowBox[{"Coefficient", "[", 
+             RowBox[{
+              RowBox[{"mylist", "[", 
+               RowBox[{"[", 
+                RowBox[{
+                 RowBox[{"-", "i"}], "+", "1", "+", 
+                 RowBox[{"Exponent", "[", 
+                  RowBox[{"PK", ",", "q", ",", "Max"}], "]"}]}], "]"}], "]"}],
+               " ", ",", "t", ",", "e"}], "]"}]}], "  ", ";", "    ", 
+           RowBox[{"a", "=", " ", 
+            RowBox[{"Part", "[", "   ", 
+             RowBox[{
+              RowBox[{"Position", "[", 
+               RowBox[{"qdeg", ",", " ", "i"}], "]"}], "   ", ",", " ", "1"}],
+              "]"}]}], "         ", ";", "  ", 
+           RowBox[{"b", "=", "    ", 
+            RowBox[{"Part", "[", "   ", 
+             RowBox[{
+              RowBox[{"Position", "[", 
+               RowBox[{"homdeg", ",", " ", "e"}], "]"}], "   ", ",", " ", 
+              "1"}], "]"}]}], "  ", "      ", ";", " ", 
+           RowBox[{
+            RowBox[{"thearray", "[", 
+             RowBox[{"[", "  ", 
+              RowBox[{"a", ",", "b"}], "   ", "]"}], "]"}], "  ", "=", " ", 
+            SuperscriptBox["Q", "coeff"]}]}], "     ", ",", "    ", 
+          RowBox[{"{", 
+           RowBox[{"e", ",", "listexp"}], "}"}]}], "]"}]}], 
+       "                                                ", ",", "       ", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "qdeg"}], "}"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"TableForm", "[", 
+      RowBox[{"thearray", ",", 
+       RowBox[{"TableHeadings", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"qdeg", ",", "homdeg"}], "}"}]}]}], "]"}]}], 
+    "\[IndentingNewLine]", ")"}]}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{3.81212037802833*^9},
+ CellLabel->"In[10]:=",ExpressionUUID->"9d4b65f8-7c9f-462b-b73b-4cecf73ce006"],
+
+Cell[BoxData[
+ RowBox[{"TableKhovanov", "[", "K", "]"}]], "Input",
+ CellChangeTimes->{{3.812119947199072*^9, 3.812119955726486*^9}, {
+  3.812120080417506*^9, 3.812120109284252*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"d1f344e5-1510-4352-ad5b-0462708a1b53"],
+
+Cell["\<\
+As in Turner\[CloseCurlyQuote]s, rows indicate q-degree (ie the powers in q); \
+and columns the homological degree (the power in t).\
+\>", "Text",
+ CellChangeTimes->{{3.812096486471625*^9, 
+  3.812096531073552*^9}},ExpressionUUID->"e4257cbf-5800-4bd3-bedc-\
+87e078704b82"],
+
+Cell[TextData[{
+ "The unnormalised Jones polynomial is the evaluation of PK at -1, that is, \
+the graded Euler characteristic of the bicomplex  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Kh", "(", "K", ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "a3a7e2cd-8962-41b7-b2a7-2373fef61381"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.8120958933914843`*^9, 3.8120959238948493`*^9}, {
+  3.812096112673793*^9, 
+  3.812096138900839*^9}},ExpressionUUID->"b7ec0159-2835-4acb-b905-\
+e5c316f62ac3"],
+
+Cell[BoxData[
+ RowBox[{"PK", "/.", 
+  RowBox[{"t", "\[Rule]", 
+   RowBox[{"-", "1"}]}]}]], "Input",
+ CellChangeTimes->{{3.8120958866610346`*^9, 3.812095888968102*^9}, 
+   3.812095928391593*^9},
+ CellLabel->"In[13]:=",ExpressionUUID->"ac3b656b-0f62-474c-bfa0-f1809746f21b"],
+
+Cell["\<\
+Let us check this is indeed the case: the classical Jones polynomial is\
+\>", "Text",
+ CellChangeTimes->{{3.812095936711512*^9, 3.8120959539332047`*^9}, {
+  3.8120959922958035`*^9, 
+  3.8120959954947033`*^9}},ExpressionUUID->"a9101b0e-6350-4806-8be1-\
+6083f9855718"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Jones", "[", "K", "]"}], "[", "t", "]"}]], "Input",
+ CellChangeTimes->{{3.812095973358447*^9, 3.8120959790394573`*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"69d82a64-035d-42b4-8307-8fe54ba47e5a"],
+
+Cell[TextData[{
+ "After normalisation (a factor ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"q", " ", "+", " ", 
+    SuperscriptBox["q", 
+     RowBox[{"-", "1"}]]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e6fca430-3eef-4cd8-a578-a020d5d5d5e9"],
+ ") and the change of variables ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"t", "=", 
+    SuperscriptBox["q", "2"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "8ed5807c-e52c-44f1-8d5b-e64e377c024c"],
+ " this is indeed the same"
+}], "Text",
+ CellChangeTimes->{{3.812096053987814*^9, 
+  3.8120961055861263`*^9}},ExpressionUUID->"9c7b545d-4dec-4a38-addd-\
+6024d9e4b466"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.812096047768057*^9, 
+  3.8120960487701955`*^9}},ExpressionUUID->"bfc469b9-e8c6-4534-bdca-\
+a38defe786e1"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"PK", "/.", 
+    RowBox[{"t", "\[Rule]", 
+     RowBox[{"-", "1"}]}]}], ")"}], " ", "\[Equal]", " ", 
+  RowBox[{"(", 
+   RowBox[{"Expand", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"q", "+", 
+       RowBox[{"1", "/", "q"}]}], ")"}], 
+     RowBox[{
+      RowBox[{"Jones", "[", "K", "]"}], "[", 
+      RowBox[{"q", "^", "2"}], "]"}]}], "]"}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.812095833082965*^9, 3.812095849054058*^9}, {
+  3.8120961513561583`*^9, 3.8120961671552258`*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"604c9de2-f7e7-4e78-b5b7-da3a51a8eb0c"],
+
+Cell[TextData[{
+ "Khovanov homology is strictly stronger than the Jones polynomial. Indeed \
+the knots ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["5", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "159ee15a-914c-487c-aa33-6e12b01936c8"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["10", "132"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "9992b384-cc21-4da3-b049-3893dbaf9f6d"],
+ " have the same Jones polynomial but different Khovanov homology:"
+}], "Text",
+ InitializationCell->True,
+ CellChangeTimes->{{3.8121190646172953`*^9, 
+  3.8121191709835787`*^9}},ExpressionUUID->"bc64a27b-b20b-4197-aa62-\
+858e54279a4c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Jones", "[", 
+    RowBox[{"Knot", "[", 
+     RowBox[{"5", ",", "1"}], "]"}], "]"}], "[", "t", "]"}], " ", "\[Equal]", 
+  " ", 
+  RowBox[{
+   RowBox[{"Jones", "[", 
+    RowBox[{"Knot", "[", 
+     RowBox[{"10", ",", "132"}], "]"}], "]"}], "[", "t", "]"}]}]], "Input",
+ CellChangeTimes->{{3.812119177003998*^9, 3.812119206906438*^9}},
+ CellLabel->"In[17]:=",ExpressionUUID->"fe9c578c-ec92-4d70-8ee8-8d19eb910593"],
+
+Cell[BoxData[{
+ RowBox[{"TableKhovanov", "[", 
+  RowBox[{"Knot", "[", 
+   RowBox[{"5", ",", "1"}], "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"TableKhovanov", "[", 
+  RowBox[{"Knot", "[", 
+   RowBox[{"10", ",", "132"}], "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.812119795839163*^9, 3.812119816970639*^9}, {
+  3.8121198642902584`*^9, 3.812119871931184*^9}, {3.8121201458475738`*^9, 
+  3.8121201584121456`*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"205bb7ce-2783-4170-894d-cbe09cfc9923"],
+
+Cell["However,", "Text",
+ CellChangeTimes->{{3.8121202433499365`*^9, 
+  3.812120247589802*^9}},ExpressionUUID->"b5fb12d0-89fb-4b54-b94a-\
+9be579264cd6"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Kh", "[", 
+   RowBox[{"Knot", "[", 
+    RowBox[{"5", ",", "1"}], "]"}], "]"}], "[", 
+  RowBox[{"q", ",", 
+   RowBox[{"-", "1"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Kh", "[", 
+   RowBox[{"Knot", "[", 
+    RowBox[{"10", ",", "132"}], "]"}], "]"}], "[", 
+  RowBox[{"q", ",", 
+   RowBox[{"-", "1"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.8121201906809587`*^9, 3.812120228999119*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"531bd2ae-e4db-40d5-bb0c-0e8178ff7b0c"]
+},
+WindowSize->{1440., 718.5},
+WindowMargins->{{0, Automatic}, {0., 27.75}},
+TaggingRules->{
+ "WelcomeScreenSettings" -> {"FEStarting" -> False}, "TryRealOnly" -> False},
+FrontEndVersion->"12.1 for Linux x86 (64-bit) (June 9, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"922c1cad-a5a5-4c56-8fbd-7355dd3e1766"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 174, 2, 29, "Input",ExpressionUUID->"98ce0fc0-b340-40fe-8eb1-77833cfd4a8e"],
+Cell[735, 24, 442, 8, 58, "Text",ExpressionUUID->"6ce7e67c-b895-4dde-a4bf-f8a36fe8b299"],
+Cell[1180, 34, 620, 15, 67, "Input",ExpressionUUID->"a0a62d4d-9f54-41bc-add9-6f0a831e4452",
+ InitializationCell->True],
+Cell[1803, 51, 172, 3, 35, "Text",ExpressionUUID->"e5af2d78-9231-4d06-b284-cf72f296e3ba"],
+Cell[1978, 56, 658, 11, 29, "Input",ExpressionUUID->"62213dab-899b-44ec-b41e-1df0e412039d"],
+Cell[2639, 69, 261, 6, 35, "Text",ExpressionUUID->"53b8d090-e268-4879-94d0-1e90d375cb9f"],
+Cell[2903, 77, 211, 5, 29, "Input",ExpressionUUID->"03757969-f7fb-48a9-8e45-b555c29406f5"],
+Cell[3117, 84, 1025, 27, 81, "Text",ExpressionUUID->"a61edf9c-a49b-464e-b31d-e53ed5397220"],
+Cell[4145, 113, 4064, 100, 303, "Input",ExpressionUUID->"9d4b65f8-7c9f-462b-b73b-4cecf73ce006",
+ InitializationCell->True],
+Cell[8212, 215, 260, 4, 29, "Input",ExpressionUUID->"d1f344e5-1510-4352-ad5b-0462708a1b53"],
+Cell[8475, 221, 282, 6, 35, "Text",ExpressionUUID->"e4257cbf-5800-4bd3-bedc-87e078704b82"],
+Cell[8760, 229, 513, 13, 35, "Text",ExpressionUUID->"b7ec0159-2835-4acb-b905-e5c316f62ac3"],
+Cell[9276, 244, 272, 6, 29, "Input",ExpressionUUID->"ac3b656b-0f62-474c-bfa0-f1809746f21b"],
+Cell[9551, 252, 276, 6, 35, "Text",ExpressionUUID->"a9101b0e-6350-4806-8be1-6083f9855718"],
+Cell[9830, 260, 233, 4, 29, "Input",ExpressionUUID->"69d82a64-035d-42b4-8307-8fe54ba47e5a"],
+Cell[10066, 266, 666, 20, 35, "Text",ExpressionUUID->"9c7b545d-4dec-4a38-addd-6024d9e4b466"],
+Cell[10735, 288, 154, 3, 29, "Input",ExpressionUUID->"bfc469b9-e8c6-4534-bdca-a38defe786e1"],
+Cell[10892, 293, 617, 17, 29, "Input",ExpressionUUID->"604c9de2-f7e7-4e78-b5b7-da3a51a8eb0c"],
+Cell[11512, 312, 683, 19, 35, "Text",ExpressionUUID->"bc64a27b-b20b-4197-aa62-858e54279a4c",
+ InitializationCell->True],
+Cell[12198, 333, 457, 12, 29, "Input",ExpressionUUID->"fe9c578c-ec92-4d70-8ee8-8d19eb910593"],
+Cell[12658, 347, 497, 10, 51, "Input",ExpressionUUID->"205bb7ce-2783-4170-894d-cbe09cfc9923"],
+Cell[13158, 359, 152, 3, 35, "Text",ExpressionUUID->"b5fb12d0-89fb-4b54-b94a-9be579264cd6"],
+Cell[13313, 364, 517, 14, 51, "Input",ExpressionUUID->"531bd2ae-e4db-40d5-bb0c-0e8178ff7b0c"]
+}
+]
+*)
+
