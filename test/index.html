@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Workshop 2026</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #1a237e;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav {
+            background-color: #283593;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: #fff;
+            padding: 15px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #3949ab;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #1a237e;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .schedule, .speakers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .card img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        form input, form select, form textarea, form button {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+        }
+
+        form button {
+            background-color: #1a237e;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        form button:hover {
+            background-color: #3949ab;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1a237e;
+            color: #fff;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mathematical Workshop 2026</h1>
+        <p>Exploring the Beauty of Mathematics Together</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#speakers">Speakers</a>
+        <a href="#registration">Register</a>
+    </nav>
+
+    <section id="about">
+        <h2>About the Workshop</h2>
+        <p>
+            Join us for a stimulating mathematical workshop where experts from around the world gather to discuss the latest developments in algebra, geometry, topology, and applied mathematics. 
+            This workshop aims to foster collaboration, learning, and inspiration among participants of all levels.
+        </p>
+    </section>
+
+    <section id="schedule">
+        <h2>Workshop Schedule</h2>
+        <div class="schedule">
+            <div class="card">
+                <h3>Day 1: Algebra & Number Theory</h3>
+                <p>09:00 - 10:30: Opening Lecture</p>
+                <p>11:00 - 12:30: Session on Number Theory</p>
+                <p>14:00 - 16:00: Algebra Workshop</p>
+            </div>
+            <div class="card">
+                <h3>Day 2: Geometry & Topology</h3>
+                <p>09:00 - 10:30: Differential Geometry</p>
+                <p>11:00 - 12:30: Topology Seminar</p>
+                <p>14:00 - 16:00: Interactive Exercises</p>
+            </div>
+            <div class="card">
+                <h3>Day 3: Applied Mathematics</h3>
+                <p>09:00 - 10:30: Mathematical Modeling</p>
+                <p>11:00 - 12:30: Computational Methods</p>
+                <p>14:00 - 16:00: Closing Discussion</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="speakers">
+        <h2>Speakers</h2>
+        <div class="speakers">
+            <div class="card">
+                <img src="https://via.placeholder.com/120" alt="Speaker 1">
+                <h3>Dr. Alice Smith</h3>
+                <p>Expert in Algebraic Topology</p>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/120" alt="Speaker 2">
+                <h3>Prof. Bob Johnson</h3>
+                <p>Specialist in Number Theory</p>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/120" alt="Speaker 3">
+                <h3>Dr. Carol Lee</h3>
+                <p>Applied Mathematics Researcher</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="registration">
+        <h2>Register for the Workshop</h2>
+        <form>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <select required>
+                <option value="">Select Your Role</option>
+                <option value="student">Student</option>
+                <option value="researcher">Researcher</option>
+                <option value="professional">Professional</option>
+            </select>
+            <textarea placeholder="Any comments or questions?" rows="4"></textarea>
+            <button type="submit">Register Now</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Mathematical Workshop. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
