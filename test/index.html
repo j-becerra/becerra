@@ -1,114 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mathematical Workshop 2026</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mathematics Monthly Seminar</title>
+
+    <!-- MathJax for LaTeX rendering -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f9;
-            color: #333;
+            font-family: "Georgia", serif;
+            background: #f7f8fb;
+            color: #222;
+            line-height: 1.7;
         }
 
         header {
-            background-color: #1a237e;
-            color: #fff;
-            padding: 20px 0;
+            background: #0d1b2a;
+            color: white;
+            padding: 40px 20px;
             text-align: center;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 2.6em;
+        }
+
+        header p {
+            font-style: italic;
+            margin-top: 10px;
         }
 
         nav {
-            background-color: #283593;
+            background: #1b263b;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         nav a {
-            color: #fff;
-            padding: 15px 20px;
+            color: white;
+            padding: 14px 20px;
             text-decoration: none;
             font-weight: bold;
-            transition: background 0.3s;
         }
 
         nav a:hover {
-            background-color: #3949ab;
+            background: #415a77;
         }
 
         section {
-            padding: 40px 20px;
             max-width: 1000px;
             margin: auto;
+            padding: 40px 20px;
         }
 
         h2 {
-            color: #1a237e;
             text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .schedule, .speakers {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            color: #1b263b;
         }
 
         .card {
-            background-color: #fff;
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
             border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
         }
 
-        .card img {
-            border-radius: 50%;
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            max-width: 400px;
-            margin: auto;
-        }
-
-        form input, form select, form textarea, form button {
-            margin-bottom: 15px;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 1em;
-        }
-
-        form button {
-            background-color: #1a237e;
-            color: #fff;
-            border: none;
-            cursor: pointer;
+        .talk-title {
             font-weight: bold;
-        }
-
-        form button:hover {
-            background-color: #3949ab;
+            font-size: 1.2em;
         }
 
         footer {
+            background: #0d1b2a;
+            color: white;
             text-align: center;
             padding: 20px;
-            background-color: #1a237e;
-            color: #fff;
+            margin-top: 40px;
+        }
+
+        .center {
+            text-align: center;
         }
 
         @media (max-width: 600px) {
@@ -118,92 +103,101 @@
         }
     </style>
 </head>
+
 <body>
 
-    <header>
-        <h1>Mathematical Workshop 2026</h1>
-        <p>Exploring the Beauty of Mathematics Together</p>
-    </header>
+<header>
+    <h1>Mathematics Monthly Seminar</h1>
+    <p>“Pure thought is the best of all amusements.” — Euler</p>
+</header>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#schedule">Schedule</a>
-        <a href="#speakers">Speakers</a>
-        <a href="#registration">Register</a>
-    </nav>
+<nav>
+    <a href="#about">About</a>
+    <a href="#upcoming">Upcoming Talks</a>
+    <a href="#past">Past Sessions</a>
+    <a href="#registration">Join Us</a>
+</nav>
 
-    <section id="about">
-        <h2>About the Workshop</h2>
+<section id="about">
+    <h2>About the Seminar</h2>
+    <div class="card">
         <p>
-            Join us for a stimulating mathematical workshop where experts from around the world gather to discuss the latest developments in algebra, geometry, topology, and applied mathematics. 
-            This workshop aims to foster collaboration, learning, and inspiration among participants of all levels.
+            This is a recurring monthly seminar dedicated to current research in mathematics.
+            Each session features an invited speaker presenting recent developments in areas such as
+            topology, algebra, geometry, and mathematical physics.
         </p>
-    </section>
 
-    <section id="schedule">
-        <h2>Workshop Schedule</h2>
-        <div class="schedule">
-            <div class="card">
-                <h3>Day 1: Algebra & Number Theory</h3>
-                <p>09:00 - 10:30: Opening Lecture</p>
-                <p>11:00 - 12:30: Session on Number Theory</p>
-                <p>14:00 - 16:00: Algebra Workshop</p>
-            </div>
-            <div class="card">
-                <h3>Day 2: Geometry & Topology</h3>
-                <p>09:00 - 10:30: Differential Geometry</p>
-                <p>11:00 - 12:30: Topology Seminar</p>
-                <p>14:00 - 16:00: Interactive Exercises</p>
-            </div>
-            <div class="card">
-                <h3>Day 3: Applied Mathematics</h3>
-                <p>09:00 - 10:30: Mathematical Modeling</p>
-                <p>11:00 - 12:30: Computational Methods</p>
-                <p>14:00 - 16:00: Closing Discussion</p>
-            </div>
-        </div>
-    </section>
+        <p>
+            We welcome researchers, PhD students, and anyone curious about mathematics.
+        </p>
 
-    <section id="speakers">
-        <h2>Speakers</h2>
-        <div class="speakers">
-            <div class="card">
-                <img src="https://via.placeholder.com/120" alt="Speaker 1">
-                <h3>Dr. Alice Smith</h3>
-                <p>Expert in Algebraic Topology</p>
-            </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/120" alt="Speaker 2">
-                <h3>Prof. Bob Johnson</h3>
-                <p>Specialist in Number Theory</p>
-            </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/120" alt="Speaker 3">
-                <h3>Dr. Carol Lee</h3>
-                <p>Applied Mathematics Researcher</p>
-            </div>
-        </div>
-    </section>
+        <p class="center">
+            Example of mathematics we love to see on the board:
+        </p>
 
-    <section id="registration">
-        <h2>Register for the Workshop</h2>
+        <p class="center">
+            $$ \int_M \omega = \int_{\partial M} \eta \qquad
+            R_{21} = R \qquad
+            \pi_1(S^3 \setminus K) $$
+        </p>
+    </div>
+</section>
+
+<section id="upcoming">
+    <h2>Upcoming Talk</h2>
+    <div class="card">
+        <p><strong>Date:</strong> March 18, 2026</p>
+        <p><strong>Speaker:</strong> Prof. Jane Doe (University of Somewhere)</p>
+        <p class="talk-title">Braided Structures in Bicategorical Topology</p>
+
+        <p>
+            In this talk we study structures arising from the relation
+            $$
+            R_{21} = R
+            $$
+            and their implications for braided monoidal bicategories.
+        </p>
+    </div>
+</section>
+
+<section id="past">
+    <h2>Previous Sessions</h2>
+
+    <div class="card">
+        <p><strong>February 2026</strong></p>
+        <p class="talk-title">Homotopy Types and Disk Bounding Knots</p>
+        <p>Speaker: Dr. Alice Smith</p>
+        <p>
+            Discussion of why the only knot bounding a disk in $S^3$ is the unknot,
+            using Dehn's lemma and loop theorems.
+        </p>
+    </div>
+
+    <div class="card">
+        <p><strong>January 2026</strong></p>
+        <p class="talk-title">One-sided Inverses in Noncommutative Rings</p>
+        <p>Speaker: Prof. Bob Johnson</p>
+        <p>
+            When does $ab = 1$ imply $ba = 1$?
+        </p>
+    </div>
+</section>
+
+<section id="registration">
+    <h2>Join the Seminar Mailing List</h2>
+    <div class="card center">
+        <p>Receive announcements for upcoming talks.</p>
         <form>
-            <input type="text" placeholder="Full Name" required>
-            <input type="email" placeholder="Email Address" required>
-            <select required>
-                <option value="">Select Your Role</option>
-                <option value="student">Student</option>
-                <option value="researcher">Researcher</option>
-                <option value="professional">Professional</option>
-            </select>
-            <textarea placeholder="Any comments or questions?" rows="4"></textarea>
-            <button type="submit">Register Now</button>
+            <input type="text" placeholder="Full Name" required><br><br>
+            <input type="email" placeholder="Email Address" required><br><br>
+            <button type="submit">Subscribe</button>
         </form>
-    </section>
+    </div>
+</section>
 
-    <footer>
-        <p>&copy; 2026 Mathematical Workshop. All Rights Reserved.</p>
-    </footer>
+<footer>
+    <p>&copy; 2026 Mathematics Monthly Seminar</p>
+</footer>
 
 </body>
 </html>
