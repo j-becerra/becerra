@@ -1,48 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mathematics Monthly Seminar</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Série d'exposés sur les "Outils algébriques en théorie conforme des champs"</title>
 
-<!-- MathJax -->
-<script>
-window.MathJax = {
-  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$']] }
-};
-</script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- MathJax for LaTeX rendering -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-<style>
-body {
-    margin: 0;
-    font-family: "Georgia", serif;
-    background: #f7f8fb;
-    color: #222;
-    line-height: 1.7;
-}
+    <style>
+        body {
+            margin: 0;
+            font-family: "Georgia", serif;
+            background: #f7f8fb;
+            color: #222;
+            line-height: 1.7;
+        }
 
-header {
-    background: #0d1b2a;
-    color: white;
-    padding: 50px 20px;
-    text-align: center;
-}
+        header {
+            background: #0d1b2a;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
 
-header h1 {
-    margin: 0;
-    font-size: 2.6em;
-}
+        header h1 {
+            margin: 0;
+            font-size: 2.6em;
+        }
 
-header p {
-    font-style: italic;
-    margin-top: 10px;
-}
+        header p {
+            font-style: italic;
+            margin-top: 10px;
+        }
 
-section {
-    max-width: 1000px;
+        section {
+    max-width: 1200px;
     margin: auto;
-    padding: 40px 20px;
+    padding: 10px 20px;
 }
 
 h2 {
@@ -51,13 +54,7 @@ h2 {
     margin-bottom: 30px;
 }
 
-.session {
-    background: white;
-    border-radius: 12px;
-    padding: 30px;
-    margin-bottom: 50px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
+
 
 .session-header {
     border-bottom: 2px solid #ddd;
@@ -76,13 +73,12 @@ h2 {
     border-left: 4px solid #1b263b;
 }
 
-.talk-title {
+.speaker {
     font-weight: bold;
     font-size: 1.15em;
 }
 
-.speaker {
-    font-style: italic;
+.talk-title {
     margin-bottom: 6px;
 }
 
@@ -102,99 +98,175 @@ footer {
 .center {
     text-align: center;
 }
-</style>
+    </style>
 </head>
 
 <body>
 
 <header>
-    <h1>Mathematics Monthly Seminar</h1>
-    <p>$\displaystyle \int_{\partial M}\omega = \int_M d\omega \qquad \pi_1(S^3 \setminus K)$</p>
+    <h1>Série d'exposés sur les <br> "Outils algébriques en théorie conforme des champs"</h1>
 </header>
 
-<section>
-    <h2>About the Seminar</h2>
-    <p class="center">
-        A monthly research seminar featuring two or three invited speakers.
-        Topics range across topology, algebra, geometry and mathematical physics.
-    </p>
+<!--
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#upcoming">Upcoming Talks</a>
+    <a href="#past">Past Sessions</a>
+</nav>
+
+-->
+
+<section id="about">
+    <div class="card">
+
+        <p>
+            Les exposés sur "Outils algébriques en théorie conforme des champs" .... bla bla bla ... dans l'Institut de Mathématiques de Bourgogne ...
+        </p>   
+        <p>
+         <b>Organizateurs:</b> Jorge Becerra et  Lukas Woike
+        </p>
+       
+
+       
+    </div>
 </section>
 
+
+
 <section>
-    <h2>Next Session</h2>
+    <h2>Prochaines séances</h2>
 
     <div class="session">
         <div class="session-header">
-            <h3>March 18, 2026 — Room B12 — 15:00–18:00</h3>
+            <h3>Mardi 24 mars 2026 </h3>
         </div>
 
         <div class="talk">
-            <div class="talk-title">Braided Structures in Bicategorical Topology</div>
-            <div class="speaker">Prof. Jane Doe — University of Somewhere</div>
+            <div class="speaker">16:00 - Lukas Müller (Perimeter Institute)  </div>
+            <div class="talk-title">Titre: BLA BLA BLA</div>
             <div class="abstract">
-                We study consequences of the symmetry condition
-                $$
-                R_{21} = R
-                $$
-                in braided monoidal bicategories.
+                Résumé: BLA BLA BLA
+            </div>
+        </div>
+    </div>
+
+
+    <div class="session">
+        <div class="session-header">
+            <h3>Mercredi 25 mars 2026 </h3>
+        </div>
+
+        <div class="talk">
+            <div class="speaker">16:00 - Lukas Müller (Perimeter Institute)  </div>
+            <div class="talk-title">Titre: BLA BLA BLA</div>
+            <div class="abstract">
+                Résumé: BLA BLA BLA
+            </div>
+        </div>
+    </div>
+
+
+
+ <div class="session">
+        <div class="session-header">
+            <h3>Mardi 31 mars 2026 </h3>
+        </div>
+
+        <div class="talk">
+            <div class="speaker">16:00 - Lukas Müller (Perimeter Institute)  </div>
+            <div class="talk-title">Titre: BLA BLA BLA</div>
+            <div class="abstract">
+                Résumé: BLA BLA BLA
             </div>
         </div>
 
         <div class="talk">
-            <div class="talk-title">One-Sided Inverses in Noncommutative Rings</div>
-            <div class="speaker">Prof. Bob Johnson — Institute of Algebra</div>
+           <div class="speaker">16:00 - Lukas Müller (Perimeter Institute)  </div>
+            <div class="talk-title">Titre: BLA BLA BLA</div>
             <div class="abstract">
-                When does $ab = 1$ imply $ba = 1$?
+                Résumé: BLA BLA BLA
             </div>
         </div>
 
         <div class="talk">
-            <div class="talk-title">Disk Bounding Knots and Dehn's Lemma</div>
-            <div class="speaker">Dr. Alice Smith — Topology Center</div>
+            <div class="speaker">16:00 - Lukas Müller (Perimeter Institute)  </div>
+            <div class="talk-title">Titre: BLA BLA BLA</div>
             <div class="abstract">
-                Why the only knot bounding a disk in $S^3$ is the unknot.
+                Résumé: BLA BLA BLA
             </div>
         </div>
 
     </div>
+
+
+
+
 </section>
 
 <section>
-    <h2>Previous Sessions</h2>
+    <h2>Dernières séances</h2>
 
     <!-- Copy-paste one of these blocks each month -->
 
-    <div class="session">
+
+
+
+ <div class="session">
         <div class="session-header">
-            <h3>February 2026</h3>
+            <h3>27 novembre 2025 </h3>
         </div>
 
         <div class="talk">
-            <div class="talk-title">Homotopy Types and Mapping Spaces</div>
-            <div class="speaker">Dr. X</div>
+            <div class="speaker">13h30-15h : Justine Fasquel (Dijon)  </div>
+            <div class="talk-title">Titre : A brief introduction to vertex algebras II</div>
+            <div class="abstract">
+               Résumé: Originally arising from two-dimensional conformal field theory, vertex algebras have also found wide-ranging applications across mathematics (eg. the Monster group and the Moonshine conjecture, modular forms and combinatorial identities, and the geometric Langlands programme just to mention a few). These two lectures aims to discuss the basic concepts and some important challenges of the theory of vertex algebras. We will first introduce our main objects of interest and illustrate with the concrete and fundamental examples arising from Lie theory. The second lecture will focus on the representation theory of vertex algebras and the deep connection with modular tensor categories.
+            </div>
         </div>
 
         <div class="talk">
-            <div class="talk-title">Tensor Categories in Low-Dimensional Topology</div>
-            <div class="speaker">Dr. Y</div>
+           <div class="speaker">15h30-16h30 : Max Demirdilek (Hambourg)  </div>
+            <div class="talk-title">Titre : Surface Diagrams for Grothendieck-Verdier Duality</div>
+            <div class="abstract">
+                Résumé : Grothendieck-Verdier categories are monoidal categories with a duality structure generalising rigid duality. Examples include categories of bimodules, modules over Hopf algebroids, and modules over vertex operator algebras. Unlike rigid categories, Grothendieck-Verdier categories admit non-invertible associativity constraints. These can be studied using a surface-diagrammatic calculus, extending Joyal and Street’s string-diagrammatic calculus into a third dimension. I will illustrate this calculus in the context of Frobenius algebras and higher Frobenius–Schur indicators. To make the geometry tangible, I will share 3D-printed surface diagrams created with homotopy.io. If time permits, I will also present coherence theorems for Grothendieck-Verdier categories. These combinatorial results, from ongoing joint work with Christian Reiher and Christoph Schweigert, simplify calculations in the surface-diagrammatic calculus.
+            </div>
         </div>
+
+
     </div>
 
+
+
+
+
+ <div class="session">
+        <div class="session-header">
+            <h3>19 novembre 2025 </h3>
+        </div>
+
+        <div class="talk">
+            <div class="speaker">13h30-15h : Justine Fasquel (Dijon)  </div>
+            <div class="talk-title">Titre : A brief introduction to vertex algebras I</div>
+            <div class="abstract">
+               Résumé: Originally arising from two-dimensional conformal field theory, vertex algebras have also found wide-ranging applications across mathematics (eg. the Monster group and the Moonshine conjecture, modular forms and combinatorial identities, and the geometric Langlands programme just to mention a few). These two lectures aims to discuss the basic concepts and some important challenges of the theory of vertex algebras. We will first introduce our main objects of interest and illustrate with the concrete and fundamental examples arising from Lie theory. The second lecture will focus on the representation theory of vertex algebras and the deep connection with modular tensor categories.
+            </div>
+        </div>
+
+
+
+        <div class="talk">
+            <div class="speaker">15h30-16h30 : Yang Yang (TU Munich)  </div>
+            <div class="talk-title">Titre : String-net models and RCFT correlators</div>
+            <div class="abstract">
+               Résumé : In the first half of the talk, I will explain how string-net models, and skein theory more broadly, can be organized as an operadic construction. In the second half of the talk, I will explain how to use string-net models to construct a consistent system of correlators in a rational conformal field theory with defects in all codimensions, and how this construction can be understood functorially using double categories.
+            </div>
+        </div>
+
+    </div>
+
+
 </section>
 
-<section class="center">
-    <h2>Mailing List</h2>
-    <p>Join the mailing list to receive announcements.</p>
-
-    <!-- Replace with your Google Form embed -->
-    <iframe src="YOUR_GOOGLE_FORM_EMBED_LINK"
-            width="100%" height="600" frameborder="0">
-    </iframe>
-</section>
-
-<footer>
-    Department of Mathematics — Monthly Seminar Seriess
-</footer>
-
-</body>
-</html>
+    </body>
+</html> 
